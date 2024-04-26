@@ -1,0 +1,17 @@
+@import "./components/fonts.scss";
+
+
+*, *::after, *::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Roboto";
+    font-size: 62.5%;
+}
+
+h1 {
+    font-size: 3rem;
+}
