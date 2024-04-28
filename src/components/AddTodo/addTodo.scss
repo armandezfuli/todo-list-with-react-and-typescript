@@ -1,0 +1,59 @@
+.addTodo {
+    width: 90%;
+    background-color: hsl(240, 15%, 20%);
+    margin: 1.5rem 0;
+    border-radius: 0.7rem;
+    padding: 1.5rem 0rem;
+    text-align: center;
+
+    h1 {
+        font-size: 1.6rem;
+        margin-bottom: 2rem;
+        color: hsl(240, 15%, 80%);
+        text-align: left;
+        padding-left: 1.5rem;
+    }
+
+    form {
+        position: relative;
+
+        input {
+            width: 25rem;
+            padding: 0.8rem 1rem;
+            font-family: inherit;
+            border: none;
+            border-radius: 0.7rem;
+            background-color: hsl(240, 15%, 15%);
+            color: hsl(0%, 0%, 90%);
+            padding-right: 5rem;
+
+            &:focus {
+                outline: .1rem solid hsl(240, 15%, 40%);
+            }
+        }
+
+        button {
+            position: absolute;
+            top: 15%;
+            right: 5%;
+            border: none;
+            border-radius: 0.7rem;
+            font-size: 1rem;
+            padding: 0.5rem 1rem;
+            background-color: hsl(240, 15%, 25%);
+            color: hsl(240, 15%, 80%);
+            cursor: pointer;
+            transform: translateY(-40%);
+            transform: scale(1);
+            transition: background-color, transform, color 300ms ease-in-out;
+            border: 1px solid hsl(240, 15%, 30%);
+
+            &:hover {
+                background-color: hsl(240, 15%, 20%);
+                transform: scale(1.1);
+                color: hsl(240, 15%, 90%);
+
+            }
+        }
+    }
+}

@@ -1,10 +1,20 @@
+import React from "react"
+import Todo from "./components/Todo/Todo"
+import AddTodo from "./components/AddTodo/AddTodo"
+import "./todos.scss"
 
-
-function Todos () {
-
+const Todos: React.FC = () => {
     return (
-        <div className="todos">
-            <h1>todos</h1>
+        <div className="todos flex column center-y">
+            <AddTodo />
+            <div className="todoContainer flex column center-y">
+                <Todo />
+                <Todo />
+                <Todo />
+                <Todo />
+                <Todo />
+                <Todo />
+            </div>
         </div>
     )
 }

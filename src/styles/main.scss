@@ -1,17 +1,47 @@
 @import "./components/fonts.scss";
 
-
-*, *::after, *::before {
+*,
+*::after,
+*::before {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body {
-    font-family: "Roboto";
+html {
     font-size: 62.5%;
 }
 
-h1 {
-    font-size: 3rem;
+body {
+    font-family: "Roboto";
+    background-color: hsl(240, 15%, 10%);
+    color: hsl(0%, 0%, 90%);
+    min-height: 100vh;
 }
+
+#root {
+    width: 100%;
+    min-height: 100vh;
+}
+
+.flex {
+    display: flex;
+}
+
+.center-x {
+    justify-content: center;
+}
+
+.center-y {
+    align-items: center;
+}
+
+.center-x-y {
+    justify-content: center;
+    align-items: center;
+}
+
+.column {
+    flex-direction: column;
+}
+

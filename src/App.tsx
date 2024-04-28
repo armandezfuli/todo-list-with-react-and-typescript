@@ -3,7 +3,6 @@ import Todos from "./Todos.tsx"
 
 const App: React.FC = () => {
 
-
     return (
         <>
             <Todos />

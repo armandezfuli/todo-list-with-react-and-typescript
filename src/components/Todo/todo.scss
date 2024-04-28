@@ -1,0 +1,123 @@
+.todo {
+    display: grid;
+    grid-template-columns: 7fr 1fr 1fr 1fr;
+    align-items: center;
+    width: 90%;
+    padding: 1rem;
+    justify-content: space-between;
+    background-color: hsl(240%, 15%, 20%);
+    border-radius: 0.7rem;
+    margin-bottom: 1rem;
+
+    h2 {
+        font-size: 1.2rem;
+    }
+
+    .addBtn {
+        border: none;
+        outline: none;
+        background: none;
+        cursor: pointer;
+
+        svg {
+            fill: hsl(240%, 15%, 80%);
+            transition: fill 300ms ease-in-out;
+        }
+
+        &:hover {
+            svg {
+                fill: hsl(0, 60%, 45%);
+            }
+        }
+    }
+
+    .doneBtn {
+        border: none;
+        outline: none;
+        background: none;
+        cursor: pointer;
+
+        svg {
+            fill: hsl(240%, 15%, 80%);
+            transition: fill 300ms ease-in-out;
+        }
+
+        &:hover {
+            svg {
+                fill: hsl(130%, 60%, 45%);
+            }
+        }
+    }
+
+    .editBtn {
+        border: none;
+        outline: none;
+        background: none;
+        cursor: pointer;
+
+        svg {
+            fill: hsl(240%, 15%, 80%);
+            transition: fill 300ms ease-in-out;
+        }
+
+        &:hover {
+            svg {
+                fill: hsl(220%, 60%, 45%);
+            }
+        }
+    }
+}
+
+.done {
+
+    h2 {
+        text-decoration: line-through;
+        color: hsl(240%, 10%, 33%);
+    }
+
+    .addBtn {
+        cursor: default;
+
+        svg {
+            fill: hsl(240%, 10%, 33%);
+
+        }
+
+        &:hover {
+            svg {
+                fill: hsl(240%, 10%, 33%);
+            }
+        }
+    }
+
+    .doneBtn {
+        cursor: default;
+
+        svg {
+            fill: hsl(240%, 10%, 33%);
+
+        }
+
+        &:hover {
+            svg {
+                fill: hsl(240%, 10%, 33%);
+            }
+        }
+    }
+
+    .editBtn {
+        cursor: default;
+
+        svg {
+            fill: hsl(240%, 10%, 33%);
+
+        }
+
+        &:hover {
+            svg {
+                fill: hsl(240%, 10%, 33%);
+            }
+        }
+    }
+
+}
