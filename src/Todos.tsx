@@ -17,9 +17,13 @@ const Todos = () => {
         ])
     }
 
+    const removeHandler = (id: string | number) => {
+        const newTodos = todos.filter((todo) => todo.id !== id)
+        setTodos(newTodos)
+    }
+
     {
         /* 
-    const removeHandler = () => {}
     const isCompleted = () => {} 
 */
     }
@@ -28,7 +32,11 @@ const Todos = () => {
         <div className="todos flex column center-y">
             <AddTodo getTextFromUser={addTodoHandler} />
             <div className="todoContainer flex column center-y">
-                {todos ? todos.map((t) => <Todo key={t.id} {...t} />) : null}
+                {todos
+                    ? todos.map((t) => (
+                          <Todo deleteTodo={removeHandler} key={t.id} {...t} />
+                      ))
+                    : null}
             </div>
         </div>
     )

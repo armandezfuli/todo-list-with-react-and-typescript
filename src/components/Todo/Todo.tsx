@@ -2,18 +2,24 @@ import React from "react"
 import "./todo.scss"
 
 export type TodoProps = {
-  id: string | number,
-  text: string,
-  isCompleted: boolean
-}
+    id: string | number
+    text: string
+    isCompleted: boolean
+    deleteTodo?: (id: string | number) => void
+} 
 
-// const Todo: React.FC = ({id, text, isCompleted : TodoProps}) => {
-    const Todo: React.FC<TodoProps> = ({id, text, isCompleted}) => {
+const Todo: React.FC<TodoProps> = ({ id, text, isCompleted, deleteTodo }) => {
+
+    const deleteTodoHandler = () => {
+        if (deleteTodo) {
+            deleteTodo(id)
+        }
+    }
 
     return (
         // done
         <div className={isCompleted ? "todo done" : "todo"}>
-            <h2>{ text }</h2>
+            <h2>{text}</h2>
             <button className="doneBtn">
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -32,7 +38,7 @@ export type TodoProps = {
                     <path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h357l-80 80H200v560h560v-278l80-80v358q0 33-23.5 56.5T760-120H200Zm280-360ZM360-360v-170l367-367q12-12 27-18t30-6q16 0 30.5 6t26.5 18l56 57q11 12 17 26.5t6 29.5q0 15-5.5 29.5T897-728L530-360H360Zm481-424-56-56 56 56ZM440-440h56l232-232-28-28-29-28-231 231v57Zm260-260-29-28 29 28 28 28-28-28Z" />
                 </svg>
             </button>
-            <button className="addBtn">
+            <button className="deleteBtn" onClick={deleteTodoHandler}>
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
                     height="15"
