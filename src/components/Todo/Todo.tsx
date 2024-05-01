@@ -1,11 +1,19 @@
 import React from "react"
 import "./todo.scss"
 
-const Todo: React.FC = () => {
+export type TodoProps = {
+  id: string | number,
+  text: string,
+  isCompleted: boolean
+}
+
+// const Todo: React.FC = ({id, text, isCompleted : TodoProps}) => {
+    const Todo: React.FC<TodoProps> = ({id, text, isCompleted}) => {
+
     return (
         // done
-        <div className="todo">
-            <h2>My Todo</h2>
+        <div className={isCompleted ? "todo done" : "todo"}>
+            <h2>{ text }</h2>
             <button className="doneBtn">
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
