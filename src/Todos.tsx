@@ -22,11 +22,13 @@ const Todos = () => {
         setTodos(newTodos)
     }
 
-    {
-        /* 
-    const isCompleted = () => {} 
-*/
+    const isCompleted = (id: string | number)  => {
+        const newTodos = [...todos]
+        const todoFindIndex = todos.findIndex(t => t.id === id)
+        newTodos[todoFindIndex].isCompleted = !newTodos[todoFindIndex].isCompleted
+        setTodos(newTodos)
     }
+
 
     return (
         <div className="todos flex column center-y">
@@ -34,7 +36,7 @@ const Todos = () => {
             <div className="todoContainer flex column center-y">
                 {todos
                     ? todos.map((t) => (
-                          <Todo deleteTodo={removeHandler} key={t.id} {...t} />
+                          <Todo deleteTodo={removeHandler} completedTodo={isCompleted} key={t.id} {...t} />
                       ))
                     : null}
             </div>

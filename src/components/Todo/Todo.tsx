@@ -6,9 +6,10 @@ export type TodoProps = {
     text: string
     isCompleted: boolean
     deleteTodo?: (id: string | number) => void
+    completedTodo?: (id: string | number) => void
 } 
 
-const Todo: React.FC<TodoProps> = ({ id, text, isCompleted, deleteTodo }) => {
+const Todo: React.FC<TodoProps> = ({ id, text, isCompleted, deleteTodo, completedTodo }) => {
 
     const deleteTodoHandler = () => {
         if (deleteTodo) {
@@ -16,11 +17,17 @@ const Todo: React.FC<TodoProps> = ({ id, text, isCompleted, deleteTodo }) => {
         }
     }
 
+    const isCompletedTodo = () => {
+        if (completedTodo) {
+            completedTodo(id)
+        }
+    }
+
     return (
         // done
         <div className={isCompleted ? "todo done" : "todo"}>
             <h2>{text}</h2>
-            <button className="doneBtn">
+            <button className="doneBtn" onClick={isCompletedTodo}>
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
                     height="15"

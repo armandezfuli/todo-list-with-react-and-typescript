@@ -1,9 +1,8 @@
 import React, { useRef } from "react"
 import "./addTodo.scss"
 
-type AddTodoHandlerType = (text: string) => void
 interface AddTodoProps {
-    getTextFromUser: AddTodoHandlerType
+    getTextFromUser: (text: string) => void
 }
 
 const AddTodo: React.FC<AddTodoProps> = ({ getTextFromUser }) => {
@@ -12,7 +11,7 @@ const AddTodo: React.FC<AddTodoProps> = ({ getTextFromUser }) => {
     const submitHandler = (event: React.SyntheticEvent) => {
         event.preventDefault()
 
-        if (inputElementRef.current) {
+        if (inputElementRef.current && inputElementRef.current.value !== "") {
             getTextFromUser(inputElementRef.current.value)
             inputElementRef.current.value = ""
             inputElementRef.current.focus()
