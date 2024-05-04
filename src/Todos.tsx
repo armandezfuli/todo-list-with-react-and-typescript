@@ -29,6 +29,13 @@ const Todos = () => {
         setTodos(newTodos)
     }
 
+    const editTodos = (id: string | number, newText: string ) => {
+       const newTodos = [...todos]
+       const todoFindIndex = todos.findIndex(t => t.id === id)
+       newTodos[todoFindIndex].text = newText
+       setTodos(newTodos)
+    }
+
 
     return (
         <div className="todos flex column center-y">
@@ -36,7 +43,7 @@ const Todos = () => {
             <div className="todoContainer flex column center-y">
                 {todos
                     ? todos.map((t) => (
-                          <Todo deleteTodo={removeHandler} completedTodo={isCompleted} key={t.id} {...t} />
+                          <Todo deleteTodo={removeHandler} completedTodo={isCompleted} editTodo={editTodos} key={t.id} {...t} />
                       ))
                     : null}
             </div>
